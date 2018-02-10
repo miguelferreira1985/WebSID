@@ -5,18 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using Entidades;
+using System.Data;
 
 namespace Repositorio
 {
     public class VehiculoRepositorio
     {
-        public List<Vehiculo> ListaVehiculo()
+        DALVehiculo datoVehiculo = new DALVehiculo();
+
+        public void InsertaVehiculo(string marca,string modelo,string anio,string placas)
         {
-            DALVehiculo datoVehiculo = new DALVehiculo();
+            Vehiculo vehiculo = new Vehiculo()
+            {
+                Marca = marca,
+                Modelo = modelo,
+                Anio = anio,
+                Placas = placas,
+                FechaAlta = DateTime.Now
 
-            List<Vehiculo> vehiculoLista = datoVehiculo.ListarVehiculos();
+            };
 
-            return vehiculoLista;
+            datoVehiculo.InsertarVehiculo(vehiculo);
+        }
+
+        public DataTable ListaVehiculo()
+        {
+            DataTable dt = new DataTable();
+
+            dt = datoVehiculo.ListarVehiculos();
+
+            return dt;
+        }
+
+        public void DesactivaVehiculo(int idVechiculo)
+        {
+            Vehiculo vehiculo = new Vehiculo()
+            {
+                IDVehiculo = idVechiculo,
+                FechaBaja = DateTime.Now
+            };
+
+            datoVehiculo.DesactivarVehiculo(vehiculo);
         }
     }
 }

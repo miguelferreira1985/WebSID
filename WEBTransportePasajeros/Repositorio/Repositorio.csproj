@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaRefaccionRepositorio.cs" />
+    <Compile Include="DetalleOrdenServicioRepositorio.cs" />
+    <Compile Include="OrdenServicioRepositorio.cs" />
+    <Compile Include="PresentacionRepositorio.cs" />
+    <Compile Include="RefaccionRepositorio.cs" />
+    <Compile Include="ServicioRepositorio.cs" />
     <Compile Include="VehiculoRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

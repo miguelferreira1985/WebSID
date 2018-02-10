@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio", "Repositorio\Repositorio.csproj", "{C855CE57-6A0D-4845-A427-1F537B8349D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBTransportePasajerosTaller", "WEBTransportePasajerosTaller\WEBTransportePasajerosTaller.csproj", "{ACF487E1-575D-46DD-BFEC-133FC14EAC27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallerTransportePasajeros", "TallerTransportePasajeros\TallerTransportePasajeros.csproj", "{C3E98D45-1EC7-4CB0-A980-D56985BBF0BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{C855CE57-6A0D-4845-A427-1F537B8349D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C855CE57-6A0D-4845-A427-1F537B8349D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C855CE57-6A0D-4845-A427-1F537B8349D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ACF487E1-575D-46DD-BFEC-133FC14EAC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACF487E1-575D-46DD-BFEC-133FC14EAC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACF487E1-575D-46DD-BFEC-133FC14EAC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACF487E1-575D-46DD-BFEC-133FC14EAC27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E98D45-1EC7-4CB0-A980-D56985BBF0BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E98D45-1EC7-4CB0-A980-D56985BBF0BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E98D45-1EC7-4CB0-A980-D56985BBF0BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E98D45-1EC7-4CB0-A980-D56985BBF0BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

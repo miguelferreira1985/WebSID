@@ -79,6 +79,7 @@
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="WebFrmMenuprincipal.aspx" />
+    <Content Include="WebFrmVehiculos.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="WebFrmMenuprincipal.aspx.designer.cs">
       <DependentUpon>WebFrmMenuprincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFrmVehiculos.aspx.cs">
+      <DependentUpon>WebFrmVehiculos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFrmVehiculos.aspx.designer.cs">
+      <DependentUpon>WebFrmVehiculos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

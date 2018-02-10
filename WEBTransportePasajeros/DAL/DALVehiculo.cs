@@ -11,47 +11,78 @@ namespace DAL
 {
     public class DALVehiculo
     {
-        public List<Vehiculo> ListarVehiculos()
+        public DataTable ListarVehiculos()
         {
-            List<Vehiculo> vehiculoList = new List<Vehiculo>();
+            DataTable dt = new DataTable();
 
-            var comando = new SqlCommand("SP_ListarVehiculos", Conexion.AbrirConexion());
-            comando.CommandType = CommandType.StoredProcedure;
-            try
+            using (var comando = new SqlCommand("SP_ListarVehiculos", Conexion.AbrirConexion()))
             {
-                SqlDataAdapter da = new SqlDataAdapter(comando);
+                comando.CommandType = CommandType.StoredProcedure;
 
-                DataTable dt = new DataTable();
-
-                da.Fill(dt);
-
-                Conexion.CerrarConexion();
-
-                foreach (DataRow dr in dt.Rows)
+                try
                 {
-                    vehiculoList.Add(
-                        new Vehiculo
-                        {
-                            IDVehiculo = Convert.ToInt32(dr["IDVehiculo"]),
-                            Marca = Convert.ToString(dr["Marca"]),
-                            Modelo = Convert.ToString(dr["Modelo"]),
-                            Anio = Convert.ToString(dr["Anio"]),
-                            Placas = Convert.ToString(dr["Placas"]),
-                            FechaAlta = Convert.ToDateTime(dr["FechaAlta"]),
-                            FechaBaja = Convert.ToDateTime(dr["FechaBaja"]),
-                            Estado = Convert.ToString(dr["Estado"])
-                        }
+                    SqlDataAdapter da = new SqlDataAdapter(comando);
+                    da.Fill(dt);
 
-                        );
+                    Conexion.CerrarConexion();
+                }
+                catch (Exception)
+                {
 
+                    throw;
                 }
             }
-            catch (Exception)
-            {
 
-                throw;
+            return dt;
+        }
+
+        public void InsertarVehiculo(Vehiculo vehiculo)
+        {
+            using (var comando = new SqlCommand("SP_InsertarVehiculo",Conexion.AbrirConexion()))
+            {
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@marca", vehiculo.Marca);
+                comando.Parameters.AddWithValue("@modelo", vehiculo.Modelo);
+                comando.Parameters.AddWithValue("@anio", vehiculo.Anio);
+                comando.Parameters.AddWithValue("@placas", vehiculo.Placas);
+                comando.Parameters.AddWithValue("@fechaAlta", vehiculo.FechaAlta);
+
+                try
+                {
+                    comando.ExecuteNonQuery();
+
+                    Conexion.CerrarConexion();
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
-            return vehiculoList;
+
+        }
+
+        public void DesactivarVehiculo(Vehiculo vehiculo)
+        {
+            using (var comando = new SqlCommand("DesactivarVehiculo", Conexion.AbrirConexion()))
+            {
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idVehiculo", vehiculo.IDVehiculo);
+                comando.Parameters.AddWithValue("@fechaBaja", vehiculo.FechaBaja);
+
+                try
+                {
+                    comando.ExecuteNonQuery();
+
+                    Conexion.CerrarConexion();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
     }
 }

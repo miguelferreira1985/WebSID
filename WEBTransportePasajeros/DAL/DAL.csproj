@@ -41,6 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="DALDetalleOrdenServicio.cs" />
+    <Compile Include="DALOrdenServicio.cs" />
+    <Compile Include="DALPresentacion.cs" />
+    <Compile Include="DALCategoriaRefaccion.cs" />
+    <Compile Include="DALRefaccion.cs" />
+    <Compile Include="DALServicio.cs" />
     <Compile Include="DALVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
